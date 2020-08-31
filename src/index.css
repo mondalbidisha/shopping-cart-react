@@ -15,3 +15,16 @@ code {
 .text-align-center {
   text-align: center !important;
 }
+
+.result-height {
+  line-height: 75px !important;
+}
+
+.filter-row {
+  line-height: 30px !important;
+  height: 55px !important;
+}
+
+.filter-container {
+  height: 100px !important;
+}

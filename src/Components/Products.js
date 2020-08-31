@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import util from './../Utils/FormatCurrency';
 
 class Products extends Component {
 
@@ -13,13 +14,13 @@ class Products extends Component {
             <img src={`products/${product.sku}_2.jpg`} alt={product.title} />
             <p>{product.title}</p>
           </a>
-          {/* <b>{util.formatCurrency(product.price)}</b> */}
-          {/* <button
+          <b>{util.formatCurrency(product.price)}</b>
+          <button
             className="btn btn-primary"
             onClick={(e) => this.props.handleAddToCart(e, product)}
           >
             Add to cart
-          </button> */}
+          </button>
         </div>
       </div>
     ));
