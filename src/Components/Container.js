@@ -54,7 +54,11 @@ class Container extends Component {
       
       if(state.size) {
         return { 
-          filteredProducts: state.productsList.filter(a => a.availableSizes.indexOf(state.size.toUpperCase()) >= 0)
+          filteredProductList: state.productsList.filter(a => {
+            if(a.availableSizes.includes(state.size.toUpperCase())) {
+              return a;
+            }
+          })
         }
       }	  
 
@@ -67,7 +71,7 @@ class Container extends Component {
   render() {
     return (
       <div className="container">
-        <h1 className="text-align-center">Ecommerce Shopping Cart Application</h1>
+        <h1 className="text-align-center">E-commerce Shopping Cart Application</h1>
         <hr/>
         <div className="row">
           <div className="col-md-10">
@@ -78,9 +82,11 @@ class Container extends Component {
              handleChangeSort={this.handleChangeSort}
              handleChangeSize={this.handleChangeSize}
             />
-            <Products products={this.state.filteredProductList} handleAddToCart={this.handleAddToCart}/>
+            <Products 
+             products={this.state.filteredProductList} 
+             handleAddToCart={this.handleAddToCart}
+            />
           </div>
-  
           <div className="col-md-2">SHOPPING CART</div>
         </div>
       </div>
